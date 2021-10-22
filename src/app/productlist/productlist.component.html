@@ -1,0 +1,20 @@
+<div class="card shadow-sm" *ngFor='let product of products'>
+    <img class="bd-placeholder-img card-img-top" style="height: 10%; width: 30%;" 
+    [src]="product.image">
+    <div class="card body">
+      <p class="card text">
+        <strong>{{product.title}}</strong>
+
+      </p>
+    <div class="card-body">
+      <p class="card-text">{{product.price}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary" >Add To Cart</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary"   [routerLink]="['/productdetails',product.id]"  (click)='viewDetails($event)' >View Details</button>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    
